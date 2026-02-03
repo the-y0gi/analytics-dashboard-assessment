@@ -11,7 +11,6 @@ import {
   LucideCar,
   LucideActivity,
   LucideAward,
-  LucideSearch,
   LucideCalendar,
 } from "lucide-react";
 
@@ -63,7 +62,6 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-[#08090a] bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.05),_transparent)] text-slate-300 transition-all duration-700 font-sans">
       <div className="max-w-[1700px] mx-auto p-6 lg:p-12 space-y-12">
-        {/* Top Header - Helio AI Style Greetings */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em]">
@@ -79,28 +77,16 @@ export default function Dashboard() {
             <h1 className="text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
               Good evening,{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-purple-500">
-                 -- MapUp 
+                -- MapUp
               </span>
             </h1>
           </div>
 
           <div className="flex items-center gap-4 w-full lg:w-auto">
-            {/* <div className="relative flex-1 lg:flex-none">
-              <LucideSearch
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"
-                size={16}
-              />
-              <input
-                type="text"
-                placeholder="Search Analytics..."
-                className="w-full lg:w-64 bg-[#111214] border border-[#1c1d20] rounded-2xl py-3 pl-12 pr-4 text-xs outline-none focus:border-brand-primary/50 transition-all"
-              />
-            </div> */}
             <FilterBar makes={uniqueMakes} onFilterChange={setFilter} />
           </div>
         </div>
 
-        {/* Horizontal Layout for Core Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           <StatsCard
             title="Total Inventory"
@@ -128,9 +114,7 @@ export default function Dashboard() {
           />
         </div>
 
-        {/* Main Analytics Hub */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {/* Adoption Curve - Large Card */}
           <div className="lg:col-span-8 group rounded-[2.5rem] bg-[#111214] border border-[#1c1d20] p-8 hover:border-brand-primary/20 transition-all duration-500 shadow-2xl">
             <div className="flex items-center justify-between mb-10">
               <div>
@@ -150,7 +134,6 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* Market Share - Square/Side Card */}
           <div className="lg:col-span-4 rounded-[2.5rem] bg-[#111214] border border-[#1c1d20] p-8 flex flex-col">
             <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500 mb-10 text-center">
               Market Share
@@ -166,9 +149,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Footer Roster Summary */}
         <div className="rounded-[2.5rem] bg-[#111214] border border-[#1c1d20] p-10 overflow-hidden relative group">
-          {/* Subtle decorative element */}
           <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-brand-primary/5 blur-3xl rounded-full group-hover:bg-brand-primary/10 transition-all" />
 
           <div className="flex items-center justify-between mb-8">
@@ -182,7 +163,6 @@ export default function Dashboard() {
               Export Data Log
             </button>
           </div>
-          {/* Table Component call yahan aayega */}
           <p className="text-xs text-slate-500 font-medium">
             Displaying deep-dive metrics for {stats.topMake} and{" "}
             {filteredData.length.toLocaleString()} other registrations.
