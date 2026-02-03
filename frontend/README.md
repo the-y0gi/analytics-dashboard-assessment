@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚡ EV Analytics Dashboard
 
-## Getting Started
+A premium, high-performance analytics dashboard designed to visualize Electric Vehicle (EV) population data with a focus on adoption trends, market share, and vehicle metrics.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Key Features
+
+- **Fleet Overview**: High-level stats showing total inventory, average battery range, and CAFV eligibility.
+- **Adoption Curve**: Interactive area chart visualizing EV registration trends over time.
+- **Market Dynamics**: Breakdown of top manufacturers and their market share.
+- **Advanced Filtering**: Dynamic filtering by vehicle make to drill down into specific manufacturer data.
+- **Responsive Analytics**: Fully responsive design optimized for various device sizes.
+- **Modern UI**: Dark-themed, glassmorphic design system with smooth micro-animations.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 15+](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Visualizations**: [Recharts](https://recharts.org/)
+- **Data Parsing**: [PapaParse](https://www.papaparse.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **State Management**: React Hooks & Context API
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js 18.x or later
+- npm / yarn / pnpm
+
+### Installation
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone <repository-url>
+   cd analytics-dashboard-assessment/frontend
+   ```
+
+2. **Install dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**:
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser**:
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the dashboard.
+
+## 📂 Project Structure
+
+```text
+/frontend
+├── app/               # Next.js App Router (pages and layouts)
+├── components/        # Reusable dashboard & UI components
+│   ├── dashboard/     # Charts, stats cards, filters, and loading screens
+│   └── layout/        # Header and Sidebar components
+├── hooks/             # Custom React hooks (e.g., useEVData for CSV loading)
+├── public/            # Static assets (data files, icons, images)
+│   └── data/          # Contains the EV population CSV dataset
+└── tailwind.config.ts # Custom theme & brand color configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🏗️ Core Components
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### `useEVData` Hook
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Client-side hook that asynchronously fetches and parses the EV dataset using PapaParse, providing real-time data status and error handling.
 
-## Learn More
+### `MainChart` Component
 
-To learn more about Next.js, take a look at the following resources:
+A versatile visualization component that dynamically switches between **Area Charts** (for adoption trends) and **Pie Charts** (for market share) based on props.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### `StatsCard` Component
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Displays summarized metrics with hover effects and specialized icons to represent key performance indicators.
 
-## Deploy on Vercel
+## 📜 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is part of a technical assessment. All rights reserved.
